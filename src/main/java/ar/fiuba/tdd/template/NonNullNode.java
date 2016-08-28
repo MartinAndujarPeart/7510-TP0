@@ -13,16 +13,20 @@ public class NonNullNode<T> extends Node {
     }
 
 
-    NonNullNode(T value){
+    NonNullNode(T value) {
         this.value = value;
         this.next = new NullNode();
     }
 
-    public void addNext(Node next){
+    public void addNext(Node next) {
         this.next = next;
     }
 
-    public int iterateThroughNodesUntilLastOccurence(){
+    public T getValue() {
+        return value;
+    }
+
+    public int iterateThroughNodesUntilLastOccurence() {
         return 1 + this.next.iterateThroughNodesUntilLastOccurence();
     }
 

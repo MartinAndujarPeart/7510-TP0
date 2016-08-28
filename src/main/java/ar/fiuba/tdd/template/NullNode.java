@@ -7,7 +7,7 @@ public class NullNode extends Node {
 
     NullNode() {}
 
-    public int iterateThroughNodesUntilLastOccurence(){
+    public int iterateThroughNodesUntilLastOccurence() {
         return 0;
     }
 }

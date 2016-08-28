@@ -16,9 +16,9 @@ public class NodeTest {
 
     @Test
     public void countNodes() {
-        NonNullNode<String>  node1 = new NonNullNode<>();
+        NonNullNode<String> node1 = new NonNullNode<>();
         NonNullNode<String> node2 = new NonNullNode<>();
-        NonNullNode<String> node3= new NonNullNode<>();
+        NonNullNode<String> node3 = new NonNullNode<>();
         NonNullNode<String> node4 = new NonNullNode<>();
         NonNullNode<String> node5 = new NonNullNode<>();
 
