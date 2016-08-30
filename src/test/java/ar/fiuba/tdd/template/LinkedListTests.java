@@ -32,11 +32,27 @@ public class LinkedListTests {
         Assert.assertEquals(list.size(),0);
     }
 
-    @Test(expected=AssertionError.class)
+    @Test(expected = AssertionError.class)
     public void removeEmptyNode() {
         LinkedList list = new LinkedList();
         list.remove();
     }
 
+    @Test
+    public void addElements() {
 
+        int []elements = {20,30,50,40,60};
+
+        LinkedList<Integer> list = new LinkedList<>();
+
+        list.add(elements[0]);
+        list.add(elements[1]);
+        list.add(elements[2]);
+        list.add(elements[3]);
+        list.add(elements[4]);
+
+        Assert.assertEquals(list.getFirstValue(),(Integer)elements[0]);
+        Assert.assertEquals(list.peekLast(), (Integer)elements[4]);
+
+    }
 }

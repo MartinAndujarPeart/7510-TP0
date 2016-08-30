@@ -8,15 +8,15 @@ class LinkedList<T> {
     private Node<T> first;
 
     LinkedList() {
-        first = new NullNode();
+        first = new NullNode<>();
     }
 
     LinkedList(T value) {
-        first = new NonNullNode(value);
+        first = new NonNullNode<>(value);
     }
 
     public T peekLast() {
-        return ((Node<T>)first.last()).getValue();
+        return (first.last()).getValue();
     }
 
     public T getFirstValue() {
@@ -24,11 +24,20 @@ class LinkedList<T> {
     }
 
     public void remove() {
-        first.remove();
+        first = first.remove();
     }
 
     public int size() {
         return first.getSize();
     }
+
+    public void add(T value) {
+        if ( first.getSize() == 0) {
+            first = new NonNullNode<>(value);
+        } else {
+            first.last().addNext(new NonNullNode<>(value));
+        }
+    }
+
 
 }
