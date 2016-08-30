@@ -26,7 +26,7 @@ public class NonNullNode<T> extends Node<T> {
     }
 
     @Override
-    public T last() {
+    public Node<T> last() {
         return iterateThroughNodesUntilLastOccurrence(this);
     }
 
@@ -41,7 +41,7 @@ public class NonNullNode<T> extends Node<T> {
     }
 
     @Override
-    public T iterateThroughNodesUntilLastOccurrence(Node<T> node) {
+    public Node<T> iterateThroughNodesUntilLastOccurrence(Node<T> node) {
         return this.next.iterateThroughNodesUntilLastOccurrence(this);
     }
 

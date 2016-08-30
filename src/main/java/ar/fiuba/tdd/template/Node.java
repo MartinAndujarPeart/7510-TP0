@@ -9,7 +9,7 @@ public abstract class Node<T> {
 
     abstract int getSize();
 
-    abstract T iterateThroughNodesUntilLastOccurrence(Node<T> node);
+    abstract Node<T> iterateThroughNodesUntilLastOccurrence(Node<T> node);
 
     abstract void addNext(Node<T> next);
 
@@ -17,6 +17,6 @@ public abstract class Node<T> {
 
     abstract T getValue();
 
-    abstract T last();
+    abstract Node<T> last();
 
 }

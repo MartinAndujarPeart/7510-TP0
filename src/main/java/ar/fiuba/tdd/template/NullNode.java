@@ -1,6 +1,6 @@
 package ar.fiuba.tdd.template;
 
-public class NullNode<T> extends Node<T>{
+public class NullNode<T> extends Node<T> {
 
     NullNode() {}
 
@@ -9,8 +9,8 @@ public class NullNode<T> extends Node<T>{
     }
 
     @Override
-    public T iterateThroughNodesUntilLastOccurrence(Node<T> node) {
-        throw new AssertionError("Empty");
+    public Node<T> iterateThroughNodesUntilLastOccurrence(Node<T> node) {
+        return node;
     }
 
     @Override
@@ -29,8 +29,8 @@ public class NullNode<T> extends Node<T>{
     }
 
     @Override
-    public T last() {
-        throw new AssertionError("The list is empty");
+    public Node<T> last() {
+        return this;
     }
 
 }
