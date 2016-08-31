@@ -1,10 +1,19 @@
 package ar.fiuba.tdd.template;
 
-public class NullNode<T> extends Node<T> {
+class NullNode<T> extends Node<T> {
 
-    NullNode() {}
+    private Node<T> genericNode;
+
+    NullNode() {
+        genericNode = this;
+    }
 
     public int getSize() {
+        return genericNode.getSizeByType();
+    }
+
+    @Override
+    public int getSizeByType() {
         return 0;
     }
 
@@ -15,22 +24,33 @@ public class NullNode<T> extends Node<T> {
 
     @Override
     public T getValue() {
+        return genericNode.getValueByType();
+    }
+
+    @Override
+    public T getValueByType() {
         throw new AssertionError("The element has no values");
     }
 
     @Override
     public void addNext(Node<T> next) {
-        throw new AssertionError("Trying to add next element to an empty element");
+        genericNode = next;
     }
 
     @Override
     public Node<T> remove() {
-        throw new AssertionError("Trying to remove an empty element");
+        return genericNode.removeByType();
     }
 
     @Override
+    public Node<T> removeByType() {
+        throw new AssertionError("Trying to remove an empty element");
+    }
+
+
+    @Override
     public Node<T> last() {
-        return this;
+        return genericNode.iterateThroughNodesUntilLastOccurrence(genericNode);
     }
 
 }

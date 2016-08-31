@@ -3,9 +3,7 @@ package ar.fiuba.tdd.template;
 import org.junit.Assert;
 import org.junit.Test;
 
-/**
- * Created by martin on 30/08/16.
- */
+
 public class QueueLinkedListTests {
 
     @Test
@@ -28,6 +26,7 @@ public class QueueLinkedListTests {
         queue.add(elements[3]);
         queue.add(elements[4]);
 
+        Assert.assertEquals(queue.size(),5);
         Assert.assertEquals(queue.top(),(Integer)elements[0]);
 
         queue.remove();
@@ -57,6 +56,7 @@ public class QueueLinkedListTests {
     @Test(expected = AssertionError.class)
     public void topEmptyQueue() {
         QueueLinkedList queue = new QueueLinkedList();
+        Assert.assertTrue(queue.isEmpty());
         queue.top();
     }
 

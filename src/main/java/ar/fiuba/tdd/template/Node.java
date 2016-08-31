@@ -1,11 +1,7 @@
 package ar.fiuba.tdd.template;
 
-/**
- * Created by martin on 28/08/16.
- */
 
-
-public abstract class Node<T> {
+abstract class Node<T> {
 
     abstract int getSize();
 
@@ -19,4 +15,9 @@ public abstract class Node<T> {
 
     abstract Node<T> last();
 
+    abstract Node<T> removeByType();
+
+    abstract T getValueByType();
+
+    abstract int getSizeByType();
 }

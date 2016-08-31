@@ -1,8 +1,6 @@
 package ar.fiuba.tdd.template;
 
-/**
- * Created by martin on 27/08/16.
- */
+
 class LinkedList<T> {
 
     private Node<T> first;
@@ -32,11 +30,7 @@ class LinkedList<T> {
     }
 
     public void add(T value) {
-        if ( first.getSize() == 0) {
-            first = new NonNullNode<>(value);
-        } else {
-            first.last().addNext(new NonNullNode<>(value));
-        }
+        first.last().addNext(new NonNullNode<>(value));
     }
 
 

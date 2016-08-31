@@ -1,19 +1,17 @@
 package ar.fiuba.tdd.template;
 
 
-public class NonNullNode<T> extends Node<T> {
+class NonNullNode<T> extends Node<T> {
 
-    private Node<T> next;
+    private Node<T> next = new NullNode<>();
     private T value;
 
     NonNullNode() {
         this.next = new NullNode<>();
-
     }
 
     NonNullNode(T value) {
         this.value = value;
-        this.next = new NullNode<>();
     }
 
     public void addNext(Node<T> next) {
@@ -36,12 +34,27 @@ public class NonNullNode<T> extends Node<T> {
     }
 
     @Override
+    public Node<T> removeByType() {
+        return remove();
+    }
+
+    @Override
+    public T getValueByType() {
+        return getValue();
+    }
+
+    @Override
+    public int getSizeByType() {
+        return getSize();
+    }
+
+    @Override
     public int getSize() {
         return 1 + this.next.getSize();
     }
 
     @Override
-    public Node<T> iterateThroughNodesUntilLastOccurrence(Node<T> node) {
+    Node<T> iterateThroughNodesUntilLastOccurrence(Node<T> node) {
         return this.next.iterateThroughNodesUntilLastOccurrence(this);
     }
 
