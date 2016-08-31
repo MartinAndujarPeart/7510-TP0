@@ -6,9 +6,7 @@ class NonNullNode<T> extends Node<T> {
     private Node<T> next = new NullNode<>();
     private T value;
 
-    NonNullNode() {
-        this.next = new NullNode<>();
-    }
+    NonNullNode() {}
 
     NonNullNode(T value) {
         this.value = value;
